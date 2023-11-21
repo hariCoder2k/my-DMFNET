@@ -1,0 +1,4 @@
+train_data_dir: /data2/Train
+valid_data_dir: /data2/Valid
+test_data_dir: /data2/Test
+ckpt_dir: ./ckpts
