@@ -28,7 +28,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-cfg', '--cfg', default='1_EESPNet_16x_PRelu_GDL_all', required=True, type=str,
                     help='Your detailed configuration of the network')
 parser.add_argument('-gpu', '--gpu', default='0', type=str, required=True,
-                    help='Supprot one GPU & multiple GPUs.')
+                    help='Support one GPU & multiple GPUs.')
 parser.add_argument('-batch_size', '--batch_size', default=1, type=int,
                     help='Batch size')
 parser.add_argument('-restore', '--restore', default='model_last.pth', type=str)# model_last.pth
