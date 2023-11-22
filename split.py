@@ -7,7 +7,7 @@ from sklearn.model_selection import StratifiedKFold
 import numpy as np
 
 root = './data2/Train'
-valid_data_dir = './data2/Valid'
+valid_data_dir = './data2/Train'
 
 def write(data, fname, root=root):
     fname = os.path.join(root, fname)
