@@ -14,12 +14,12 @@ modalities = ('flair', 't1ce', 't1', 't2')
 
 
 train_set = {
-        'root': './data2/Train',
+        'root': '/content/drive/MyDrive/data2/Train',
         'flist': 'all.txt',
         }
 
 valid_set = {
-        'root': './data2/Valid',
+        'root': '/content/drive/MyDrive/data2/Valid',
         'flist': 'valid.txt',
         }
 
@@ -100,3 +100,4 @@ doit(train_set)
 # doit(test_set)
 
 
+print("All done finally")
