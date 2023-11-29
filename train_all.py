@@ -5,6 +5,7 @@ import time
 import logging
 import random
 
+import datetime # my code 
 import torch
 import torch.backends.cudnn as cudnn
 import torch.optim
@@ -99,12 +100,32 @@ def main():
 
     losses = AverageMeter()
     torch.set_grad_enabled(True)
-
+    
+    # Set save_freq to the number of batches in 5 epochs
+    start_time = time.time()
     for i, data in enumerate(train_loader, args.start_iter):
+
+        # ---------------------------------my code--------------------------------
+        # Check if 30 minutes have passed
+        elapsed_time = time.time() - start_time
+        if elapsed_time >= 900:  # 900 seconds = 30 minutes
+            # Save the model with a timestamp as the filename
+            timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+            file_name = os.path.join(ckpts, f'model_{timestamp}.pth')
+            torch.save({
+                'iter': i,
+                'state_dict': model.state_dict(),
+                'optim_dict': optimizer.state_dict(),
+            }, file_name)
+
+            # Update the start time
+            start_time = time.time()
+        #-------------------------------------------------------------------------
 
         elapsed_bsize = int( i / enum_batches)+1
         epoch = int((i + 1) / enum_batches)
         setproctitle.setproctitle("Epoch:{}/{}".format(elapsed_bsize,args.num_epochs))
+
 
         # actual training
         adjust_learning_rate(optimizer, epoch, args.num_epochs, args.opt_params.lr)
@@ -130,6 +151,7 @@ def main():
         loss.backward()
         optimizer.step()
 
+
         if (i+1) % int(enum_batches * args.save_freq) == 0 \
             or (i+1) % int(enum_batches * (args.num_epochs -1))==0\
             or (i+1) % int(enum_batches * (args.num_epochs -2))==0\
@@ -143,8 +165,6 @@ def main():
                 'optim_dict': optimizer.state_dict(),
                 },
                 file_name)
-
-
         msg = 'Iter {0:}, Epoch {1:.4f}, Loss {2:.7f}'.format(i+1, (i+1)/enum_batches, losses.avg)
         logging.info(msg)
 
