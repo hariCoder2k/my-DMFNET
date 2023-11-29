@@ -6,8 +6,8 @@ import os
 from sklearn.model_selection import StratifiedKFold
 import numpy as np
 
-root = '/content/drive/MyDrive/data2/Train'
-valid_data_dir = '/content/drive/MyDrive/data2/Valid'
+root = '/kaggle/input/brats2018/MICCAI_BraTS_2018_Data_Training'
+valid_data_dir = '/kaggle/input/brats2018/MICCAI_BraTS_2018_Data_Validation'
 
 def write(data, fname, root=root):
     fname = os.path.join(root, fname)
