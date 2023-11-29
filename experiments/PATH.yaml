@@ -1,4 +1,4 @@
-train_data_dir: ./data2/Train
+train_data_dir: /content/drive/MyDrive/data2/Train
 valid_data_dir: ./data2/Train
-test_data_dir: ./data2/Train
-ckpt_dir: ./ckpts
+test_data_dir: /content/drive/MyDrive/data2/Valid
+ckpt_dir: /content/drive/MyDrive/data2/
