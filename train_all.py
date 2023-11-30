@@ -108,7 +108,7 @@ def main():
         # ---------------------------------my code--------------------------------
         # Check if 30 minutes have passed
         elapsed_time = time.time() - start_time
-        if elapsed_time >= 900:  # 900 seconds = 30 minutes
+        if elapsed_time >= 450:  # 450 seconds = 15 minutes
             # Save the model with a timestamp as the filename
             timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
             file_name = os.path.join(ckpts, f'model_{timestamp}.pth')
