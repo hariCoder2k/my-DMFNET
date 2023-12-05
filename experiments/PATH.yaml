@@ -1,4 +1,4 @@
-train_data_dir: /content/drive/MyDrive/data2/Train
-valid_data_dir: ./data2/Train
-test_data_dir: /content/drive/MyDrive/data2/Valid
-ckpt_dir: /content/drive/MyDrive/data2/
+train_data_dir: /kaggle/input/btsdataset/data2/Train
+valid_data_dir: /kaggle/input/btsdataset/data2/
+test_data_dir: //kaggle/input/btsdataset/data2/Valid
+ckpt_dir: /kaggle/working/

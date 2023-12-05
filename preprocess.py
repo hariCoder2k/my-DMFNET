@@ -14,12 +14,12 @@ modalities = ('flair', 't1ce', 't1', 't2')
 
 
 train_set = {
-        'root': '/kaggle/input/brats2018/MICCAI_BraTS_2018_Data_Training',
+        'root': './data2/Train',
         'flist': 'all.txt',
         }
 
 valid_set = {
-        'root': '/kaggle/input/brats2018/MICCAI_BraTS_2018_Data_Validation',
+        'root': '',
         'flist': 'valid.txt',
         }
 
